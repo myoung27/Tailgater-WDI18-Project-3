@@ -3,9 +3,27 @@ import axios from "axios"
 
 export default class LoginPage extends Component {
     state = {
-        users: []
+        users: [],
+        newUser:{
+            username: '',
+            password:""
+        }
     }
+    handleChange = (event) => {
+        console.log('name', event.target.name)
+        console.log('value', event.target.value)
+        const updatedNewUser = {...this.state.newUser}
 
+        updatedNewUser[event.target.name] = event.target.value
+        this.setState({newUser: updatedNewUser})
+    }
+     handleSubmit = (event) => {
+         event.preventDefault()
+     }
+
+
+
+     
     getAllUsers = () => {
         axios.get('/api/users').then((res)=> {
             this.setState({users: res.data})
@@ -23,6 +41,19 @@ export default class LoginPage extends Component {
                 {user.username}
             </div>
         )) }
+
+        <h3> Sign-Up</h3>
+        <form onSubmit = {this.handleSubmit}>
+            <div>
+                <label htmlFor="username">User Name</label>
+                <input onChange={this.handleChange } value={this.state.newUser.username}type= "text" name= "username"/>
+            </div>
+            <div>
+                <label htmlFor="password">Password</label>
+                <input onChange={this.handleChange } value ={ this.state.newUser.password} type= "password" name= "password"/>
+            </div>
+            <button type= "submit">Create a User</button>
+        </form>
       </div>
     )
   }
