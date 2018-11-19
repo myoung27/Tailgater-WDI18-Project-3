@@ -32,8 +32,8 @@ class App extends Component {
         <Switch>
           <Route exact path ='/' component ={HomePage} />
           <Route exact path ='/login' component ={LoginPage} />
-          <Route exact path ='/users/:userId/games' component ={GamePage}/>
-          <Route exact path ='/items' component ={ItemsPage}/>
+          <Route exact path ='/users/:userId/' component ={GamePage}/>
+          <Route exact path ='/users/:userId/games/:gameId' component ={ItemsPage}/>
         </Switch>
         </div>
       </Router>
