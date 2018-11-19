@@ -15,6 +15,10 @@ body{
   padding: 0;
   font-family: 'Bangers', cursive;
   background: green;
+
+h1{
+  text-align: center;
+}
 }
 `
 
@@ -28,7 +32,7 @@ class App extends Component {
         <Switch>
           <Route exact path ='/' component ={HomePage} />
           <Route exact path ='/login' component ={LoginPage} />
-          <Route exact path ='/game' component ={GamePage}/>
+          <Route exact path ='/users/:userId/games' component ={GamePage}/>
           <Route exact path ='/items' component ={ItemsPage}/>
         </Switch>
         </div>

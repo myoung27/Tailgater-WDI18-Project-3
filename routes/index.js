@@ -13,7 +13,7 @@ router.get('/api/users/:userId/game/:gameId/items', itemController.index)
 router.get('/api/users/:userId/game/:gameId/items/:itemId', itemController.show)
 
 // //create routes
-router.post('/api/users/', userController.create)
+router.post('/api/users', userController.create)
 router.post('/api/users/:userId/game', gameController.create)
 router.post('/api/users/:userId/game/:gameId/items', itemController.create)
 // router.post('/users', usersController.create)
