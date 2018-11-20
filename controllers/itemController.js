@@ -9,7 +9,7 @@ const itemController = {
         const gameId = req.params.gameId;
         Game.findById(gameId).populate("item")
             .then(game => {
-                res.send(game);
+                res.send(game.item);
             });
     },
 

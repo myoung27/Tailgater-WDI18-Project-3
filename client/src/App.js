@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom'
 import HomePage from './components/HomePage'
 import LoginPage from './components/LoginPage'
 import GamePage from './components/GamePage'
@@ -33,7 +33,7 @@ class App extends Component {
           <Route exact path ='/' component ={HomePage} />
           <Route exact path ='/login' component ={LoginPage} />
           <Route exact path ='/users/:userId/' component ={GamePage}/>
-          <Route exact path ='/users/:userId/games/:gameId' component ={ItemsPage}/>
+          <Route exact path ='/users/:userId/games/:gameId/item' component ={ItemsPage}/>
         </Switch>
         </div>
       </Router>

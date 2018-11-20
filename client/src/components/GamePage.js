@@ -51,7 +51,7 @@ export default class GamePage extends Component {
         <h1>Hello {this.state.user.username} !</h1>
         { this.state.games.map((game) => ( 
           <div key={game._id}>
-            -<Link to={`/users/${this.state.user._id}/games/${game._id}`}>{game.name}</Link> <br/>
+            -<Link to={`/users/${this.state.user._id}/games/${game._id}/item`}>{game.name}</Link> <br/>
             {game.date}
             <br/>
             {game.description}
