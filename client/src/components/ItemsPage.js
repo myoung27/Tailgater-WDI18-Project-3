@@ -12,11 +12,11 @@ export default class ItemsPage extends Component {
 componentDidMount(){
   const userId = this.props.match.params.userId
   const gameId = this.props.match.params.gameId
-  axios.get(`/api/users/${userId}/game/${gameId}/item`).then((res) => {
+  axios.get(`/api/users/${userId}/games/${gameId}/item`).then((res) => {
     console.log(res.data)
     this.setState({items: res.data})
   })
-  axios.get(`/api/users/${userId}/game`).then((res) => {
+  axios.get(`/api/users/${userId}/games`).then((res) => {
     console.log(res.data)
     this.setState({games: res.data})
   })
@@ -33,7 +33,7 @@ componentDidMount(){
       comments:'Item Comments'
 
     }
-    axios.post(`/api/users/${userId}/game/${gameId}/item`, payload).then(res => {
+    axios.post(`/api/users/${userId}/games/${gameId}/item`, payload).then(res => {
       const newItem = res.data
       const newStateItem = [...this.state.items, newItem]
       this.setState({ items: newStateItem })
@@ -43,10 +43,10 @@ componentDidMount(){
   handleDelete = itemId => {
     const userId = this.props.match.params.userId
     const gameId = this.props.match.params.gameId
-    axios.delete(`/api/users/${userId}/game/${gameId}/item`).then(() => {
+    axios.delete(`/api/users/${userId}/games/${gameId}/item`).then(() => {
       const newItem = [...this.state.items]
       const filtered = newItem.filter(item => {
-        return item._id !== itemId // ! = =
+        return item._id !== itemId 
       })
       this.setState({items: filtered})
     })
@@ -71,7 +71,7 @@ componentDidMount(){
     })
     const userId = this.props.match.params.userId
     const gameId = this.props.match.params.gameId
-    axios.patch(`/api/users/${userId}/game/${gameId}/item`, itemToUpdate).then(() => {
+    axios.patch(`/api/users/${userId}/games/${gameId}/item`, itemToUpdate).then(() => {
       console.log("Updated Item")  
     })
   }
@@ -92,7 +92,7 @@ componentDidMount(){
             }
             return (
             <div>
-        <input 
+        <textarea
           onBlur={() => this.handleUpdate(item._id)}
           onChange={(event) => this.handleChange(event, item._id)} 
           type="text" name="title" 
@@ -101,8 +101,8 @@ componentDidMount(){
         <textarea 
           onBlur={() => this.handleUpdate(item._id)}
           onChange={(event) => this.handleChange(event, item._id)} 
-          name="description" 
-          value={item.description} 
+          name="quantity" 
+          value={item.quantity} 
         />
         <textarea 
           onBlur={() => this.handleUpdate(item._id)}

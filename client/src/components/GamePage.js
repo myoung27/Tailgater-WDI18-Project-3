@@ -25,9 +25,9 @@ export default class GamePage extends Component {
     
       handleSubmit = (event) => {
         event.preventDefault()
-        axios.post(`/api/users/${this.state.user._id}/game`, this.state.newGame).then(res => {
+        axios.post(`/api/users/${this.state.user._id}/games`, this.state.newGame).then(res => {
           console.log(res.data)
-          this.props.history.push(`/users/${res.data._id}/games`)
+          this.props.history.push(`/users/${this.state.user._id}/games/${res.data._id}/item`)
         })
         
       }
@@ -37,10 +37,10 @@ export default class GamePage extends Component {
         
         const userId = this.props.match.params.userId
         axios.get(`/api/users/${userId}`).then((res) => {
-            console.log(res.data.game)
+            console.log(res.data.games)
             this.setState({user: res.data})
         })
-        axios.get(`/api/users/${userId}/game`).then((res) => {
+        axios.get(`/api/users/${userId}/games`).then((res) => {
             console.log(res.data)
             this.setState({games: res.data})
         })

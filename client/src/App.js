@@ -8,15 +8,14 @@ import MavBar from './components/MavBar'
 import { createGlobalStyle } from 'styled-components'
 
 const Global = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Bangers');
-
+@import url('https://fonts.googleapis.com/css?family=Graduate|Roboto');
 body{
   margin: 0;
   padding: 0;
-  font-family: 'Bangers', cursive;
+  font-family:'Graduate', cursive;
   background: green;
 
-h1{
+h1,h2{
   text-align: center;
 }
 }
