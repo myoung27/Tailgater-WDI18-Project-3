@@ -58,7 +58,7 @@ class LogInPage extends Component {
             <input onChange={this.handleChange} value={this.state.newUser.username} type="text" name="username"/>
           </div>
           <div>
-            <label htmlFor="name">name: </label>
+            <label htmlFor="name">Name: </label>
             <input onChange={this.handleChange} value={this.state.newUser.name} type="text" name="name"/>
           </div>
           <div>
