@@ -5,7 +5,7 @@ import axios from 'axios'
 export default class ItemsPage extends Component {
   state ={
     game: {},
-    games: {},
+    games: [],
     items: []
 
   }
@@ -16,10 +16,7 @@ componentDidMount(){
     console.log(res.data)
     this.setState({items: res.data})
   })
-  axios.get(`/api/users/${userId}/games`).then((res) => {
-    console.log(res.data)
-    this.setState({games: res.data})
-  })
+  
 
 }
 
@@ -28,7 +25,6 @@ componentDidMount(){
     const gameId = this.props.match.params.gameId
     const payload = {
       name: 'Item Name',
-      description: 'Item Description',
       quantity:"Item Quantity",
       comments:'Item Comments'
 
@@ -43,7 +39,7 @@ componentDidMount(){
   handleDelete = itemId => {
     const userId = this.props.match.params.userId
     const gameId = this.props.match.params.gameId
-    axios.delete(`/api/users/${userId}/games/${gameId}/item`).then(() => {
+    axios.delete(`/api/users/${userId}/games/${gameId}/item/${itemId}`).then(() => {
       const newItem = [...this.state.items]
       const filtered = newItem.filter(item => {
         return item._id !== itemId 
@@ -71,7 +67,7 @@ componentDidMount(){
     })
     const userId = this.props.match.params.userId
     const gameId = this.props.match.params.gameId
-    axios.patch(`/api/users/${userId}/games/${gameId}/item`, itemToUpdate).then(() => {
+    axios.patch(`/api/users/${userId}/games/${gameId}/item/${itemId}`, itemToUpdate).then(() => {
       console.log("Updated Item")  
     })
   }
@@ -95,7 +91,7 @@ componentDidMount(){
         <textarea
           onBlur={() => this.handleUpdate(item._id)}
           onChange={(event) => this.handleChange(event, item._id)} 
-          type="text" name="title" 
+          type="text" name="name" 
           value={item.name} 
         />
         <textarea 

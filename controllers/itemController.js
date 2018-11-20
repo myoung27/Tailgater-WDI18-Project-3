@@ -44,9 +44,7 @@ const itemController = {
     },
     update: (req, res) => {
         const itemId = req.params.itemId
-        Item.findByIdAndUpdate(itemId, req.body, {
-                new: true
-            })
+        Item.findByIdAndUpdate(itemId, req.body, {new: true})
             .then((updatedItem) => {
                 updatedItem.save()
                 res.send(updatedItem)

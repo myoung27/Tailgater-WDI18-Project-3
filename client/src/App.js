@@ -18,6 +18,9 @@ body{
 h1,h2{
   text-align: center;
 }
+h3{
+  align-content: center;
+}
 }
 `
 

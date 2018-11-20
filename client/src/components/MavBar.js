@@ -17,7 +17,7 @@ export default class MavBar extends Component {
     
       <Link to= '/'> Go Home</Link>
       <Link to= '/login'> Login </Link> 
-      <Link to= '/users/${this.state.user._id}'> My Games </Link>
+      <Link to= '/users/'> My Games </Link>
       </MavBarStyles>
     )
   }

@@ -21,14 +21,14 @@ router.post('/api/users/:userId/games/:gameId/item', itemController.create)
 
 // //delete routes 
 router.delete('/api/users/:userId/games/:gameId', gameController.delete)
-router.delete('/api/users/:userId/games/:gameId/item/', itemController.delete)
+router.delete('/api/users/:userId/games/:gameId/item/:itemId', itemController.delete)
 // router.delete('/users/:usersId', usersController.delete)
 // router.delete('/users/:usersId/houses/:housesId', housesController.delete)
 
 // //update routes 
 
 router.patch('/api/users/:userId/games/:gameId', gameController.update)
-router.patch('/api/users/:userId/games/:gameId/item/', itemController.update)
+router.patch('/api/users/:userId/games/:gameId/item/:itemId', itemController.update)
 
 // router.patch('/users/:usersId', usersController.update)
 // router.patch('/users/:usersId/houses/:housesId', housesController.update)
