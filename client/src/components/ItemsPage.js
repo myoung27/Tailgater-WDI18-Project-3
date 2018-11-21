@@ -1,5 +1,21 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import styled from 'styled-components'
+
+
+const Boxes = styled.div`
+  display: flex;
+  justify-content: space-between ;
+  flex-direction: column;
+  width: 200px;
+  text-align: center;
+  border: 2px,solid,black;
+  flex-wrap: wrap;
+  border: 4px solid black;
+`
+
+
+
 
 
 export default class ItemsPage extends Component {
@@ -87,7 +103,7 @@ componentDidMount(){
               return this.handleDelete(item._id)
             }
             return (
-            <div>
+            <Boxes>
         <textarea
           onBlur={() => this.handleUpdate(item._id)}
           onChange={(event) => this.handleChange(event, item._id)} 
@@ -107,7 +123,7 @@ componentDidMount(){
           value={item.comments} 
         />
         <button onClick={deleteItem}>X</button>
-      </div>
+      </Boxes>
             )
           })}
       </div>

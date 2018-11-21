@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
+
+const Userz = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  
+  
+  `
 
 
 class LogInPage extends Component {
@@ -44,13 +54,14 @@ class LogInPage extends Component {
     return (
       <div>
         <h1>Login</h1>
-        <h3>All Users: </h3>
+        <h2>All Users: </h2>
         { this.state.users.map((user) => (
+          <Userz>
           <div key={user._id}>
             <Link to={`/users/${user._id}`}>{user.username}</Link> -{user.name}
           </div>
+          </Userz>
         )) }
-
         <h3>Sign-Up</h3>
         <form onSubmit={this.handleSubmit}>
           <div>

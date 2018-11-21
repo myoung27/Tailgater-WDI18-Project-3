@@ -14,14 +14,21 @@ body{
   padding: 0;
   font-family:'Graduate', cursive;
   background: green;
+}
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 
 h1,h2{
   text-align: center;
 }
-h3{
+img{
   align-content: center;
 }
-}
+
 `
 
 class App extends Component {
