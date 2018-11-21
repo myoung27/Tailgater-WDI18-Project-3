@@ -1,10 +1,10 @@
 # Tailgater-WDI18-Project-3
 Project #3 for WDI18 at General Assembly
-[Tailgater](https://tgatekeeper.herokuapp.com/)
+View the App: [Tailgater](https://tgatekeeper.herokuapp.com/)
 
 ## Overview
 
-This app is all about organizing for tailgating events and ensuring that everyone has everything for a good time. After I graduate from college, I always enjoyed bonding with friends  
+This app is all about organizing for tailgating events and ensuring that everyone has everything for a good time. After I graduate from college, I always enjoy bonding with friends at tailgating events. During the events, even when planning out the day, between reviewing the event through Facebook, and other social media platforms, it's hard to keep track of what each person will bring and having a visual of what's needed. With Tailgater, you're able to view your games, and explore whats needed or being brought for each tailgate.
 
 
 ## Technologies Used
