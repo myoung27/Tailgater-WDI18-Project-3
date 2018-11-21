@@ -122,7 +122,7 @@ componentDidMount(){
           name="comments" 
           value={item.comments} 
         />
-        <button onClick={deleteItem}>X</button>
+        <button onClick={deleteItem}>Delete this Item</button>
       </Boxes>
             )
           })}

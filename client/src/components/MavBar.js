@@ -1,8 +1,12 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, {
+  Component
+} from 'react'
+import {
+  Link
+} from 'react-router-dom'
 import styled from 'styled-components'
 
-const MavBarStyles = styled.div`
+const MavBarStyles = styled.div `
  display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,13 +17,11 @@ const MavBarStyles = styled.div`
 export default class MavBar extends Component {
   render() {
     return (
-      <MavBarStyles>
-    
-      <Link to= '/'> Go Home</Link>
-      <Link to= '/login'> Login </Link> 
-      <Link to= '/users/'> My Games </Link>
-      </MavBarStyles>
+      <MavBarStyles >
+      <Link to = '/' > Go Home </Link> 
+      <Link to = '/login' > Login </Link>  
+      <Link to = {`/users`}> My Games </Link> 
+      </MavBarStyles >
     )
   }
 }
-
